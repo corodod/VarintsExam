@@ -1,0 +1,30 @@
+/*
+6.2
+функция для двумерного массива целых чисел вернет индекс последней строки,
+состоящей только из четных чисел, если таких нет, то вернуть -1
+отдельную функцию для проверки счетности строки
+ */
+public class Main {
+    public static boolean areGood(int[] dd){
+        int rr = 0;
+        for(int i = 0;i<dd.length; i++){
+            if(dd[i]%2==0){
+                rr++;
+            }
+        }
+        return rr == dd.length;
+    }
+    public static void task62(int[][] massive){
+        int ff = -1;
+        for(int i = 0;i< massive.length; i++){
+            if(areGood(massive[i])){
+                ff = i;
+            }
+        }
+        System.out.println(ff);
+    }
+    public static void main(String[] args) {
+        int[][] massive = {{4, 10, 66, 2, 6},{12, 20, 0, -6, 50},{50, 12, 21, 15, 84}};
+        task62(massive);
+    }
+}
