@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+/*
+функция которая из элементов переданного списка в новый список (List<Integer>),
+состоящий из всех элементов локальных минимумов, локальный минимум - это когда селва и справа числа меньше
+ */
+public class Main {
+    public static void main(String[] args) {
+        int[] ss = {1, 2, 3, 5, -1, 0, 5, 3};
+        int pozaproshly = -10000000;
+        int proshly = 100000000;
+        ArrayList<Integer> rr = new ArrayList<>();
+        for(int dd:ss){
+            if(dd>proshly && proshly<pozaproshly){
+                rr.add(proshly);
+            }
+            pozaproshly = proshly;
+            proshly = dd;
+        }
+        System.out.println(rr);
+    }
+}
