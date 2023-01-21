@@ -1,0 +1,29 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+функция, которая заполняет массив
+27 20 19 12 11 4 3
+26 21 18 13 10 5 2
+25 22 17 14 9  6 1
+24 23 16 15 8  7 0
+ */
+public class Main {
+    public static void main(String[] args) {
+        Scanner ss = new Scanner(System.in);
+        int a = ss.nextInt();//длина строки
+        int b = ss.nextInt();// количество строк
+        int[][] massive = new int[b][a];
+        for(int n = 0; n < a*b; n++) {// формирую j и i
+            int j = a-1 - n/b ;//здесь все четко
+            int i = 1000000;
+            if((a-j-1)%2 ==0){
+                i = b - n%b -1;
+            }else{
+                i = n%b;
+            }
+            massive[i][j] = n;
+        }
+        System.out.println(Arrays.deepToString(massive));
+    }
+}
