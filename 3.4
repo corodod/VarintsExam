@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+/*
+3.4
+ ---
+|  /|
+| / |
+|/  |
+ ---
+ написать для картинки
+ */
+public class Main {
+    public static void maiN(int x, int level){
+        System.out.print("|");
+        for(int i = 0; i<x-(level+1);i++){
+            System.out.print(" ");
+        }
+        System.out.print("/");
+        for(int i = 0; i<level;i++){
+            System.out.print(" ");
+        }
+        System.out.println("|");
+    }
+
+    public static void krai(int x){
+        System.out.print(" ");
+        for(int i = 0; i<x;i++){
+            System.out.print("-");
+        }
+        System.out.println(" ");
+    }
+    public static void main(String[] args) {
+        Scanner ss = new Scanner(System.in);
+        int s = ss.nextInt();
+        krai(s);
+        for(int i = 0; i<s;i++){
+            maiN(s,i);
+        }
+        krai(s);
+    }
+}
